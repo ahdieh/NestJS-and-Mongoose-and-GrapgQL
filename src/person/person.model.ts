@@ -9,8 +9,8 @@ export class Person {
   @Prop()
   name: string;
 
-  @Prop()
-  hobbies: Hobby[];
+  @Prop({ type: [MonggoseSchema.Types.ObjectId], ref: Hobby.name })
+  hobbies: MonggoseSchema.Types.ObjectId[];
 }
 
 export type PersonDocument = Person & Document;
